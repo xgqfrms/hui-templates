@@ -61,7 +61,6 @@ export default {
 <style scoped>
 .hello-container {
     box-sizing: border-box;
-    /* display: grid; */
 }
 .hello-msg {
     color: #abcdef;

@@ -16,7 +16,8 @@
     "dependencies": {
         "core-js": "^2.6.5",
         "h_ui": "^1.0.37-patch2",
-        "vue": "^2.6.10"
+        "vue": "^2.6.10",
+        "vue-router": "^3.0.6"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "^3.8.0",
