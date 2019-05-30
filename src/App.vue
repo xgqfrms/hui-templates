@@ -5,16 +5,6 @@
             src="./assets/logo.png"
             class="app-logo"
         />
-        <hr />
-        <!-- <router-link to="/index">Go to About</router-link> -->
-        <span class="link-box">
-            <router-link to="/home">Home</router-link>
-        </span>
-        <span class="link-box">
-            <router-link to="/about">About</router-link>
-        </span>
-        <router-view>
-        </router-view>
         <!-- <div class="app-box">
             <HuiDatepicker
                 title="hui datepicker"
@@ -31,25 +21,32 @@
                 name="xgqfrms"
             />
         </div> -->
+        <hr />
+        <span class="link-box">
+            <router-link to="/index">Index</router-link>
+        </span>
+        <span class="link-box">
+            <router-link to="/home">Home</router-link>
+        </span>
+        <span class="link-box">
+            <router-link to="/about">About</router-link>
+        </span>
+        <router-view>
+        </router-view>
     </div>
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
-import HelloWorld from "./components/HelloWorld";
-import HuiDemo from "./components/hui-demo";
-import HuiDatepicker from "./components/hui-datepicker";
-// import { Home } from "./pages/home.vue";
-// import { About } from "./pages/about.vue";
+// import HelloWorld from "./components/HelloWorld";
+// import HuiDemo from "./components/hui-demo";
+// import HuiDatepicker from "./components/hui-datepicker";
 
 export default {
     name: "app",
     components: {
-        HelloWorld,
-        HuiDemo,
-        HuiDatepicker,
-        // Home,
-        // About,
+        // HelloWorld,
+        // HuiDemo,
+        // HuiDatepicker,
     }
 };
 </script>

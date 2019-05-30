@@ -3,23 +3,17 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-
 // route components
-// import { App } from "../App.vue";
-
-import Home  from "../pages/home.vue";
-import About from "../pages/about.vue";
-
-// default export bug
-// import { Home } from "../pages/home.vue";
-// import { About } from "../pages/about.vue";
+import Home  from "../pages/home";
+import About from "../pages/about";
+import Index from "../pages/index";
 
 
 const routes = [
-    // {
-    //     path: "/index",
-    //     component: App,
-    // },
+    {
+        path: "/index",
+        component: Index,
+    },
     {
         path: "/home",
         component: Home,
@@ -35,7 +29,5 @@ const routers = new VueRouter({
     routes,
 });
 
-// export default routers;
+export default routers;
 export {routers};
-// export default routes;
-// export {routes};

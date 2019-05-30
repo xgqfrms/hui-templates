@@ -3,18 +3,24 @@
         <h1 class="home-msg">
             {{msg}}
         </h1>
+        <div class="app-box">
+            <HuiDemo
+                msg="hui app"
+                name="xgqfrms"
+            />
+        </div>
     </div>
 </template>
 
+
 <script>
+import HuiDemo from "../components/hui-demo";
+
 export default {
     name: "Home",
-    // props: {
-    //     // msg: {
-    //     //     value: "",
-    //     //     type: String,
-    //     // },
-    // },
+    components: {
+        HuiDemo,
+    },
     data() {
         return {
             msg: "Home Page",

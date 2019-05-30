@@ -3,18 +3,22 @@
         <h1 class="about-msg">
             {{msg}}
         </h1>
+        <div class="app-box">
+            <HuiDatepicker
+                title="hui datepicker"
+            />
+        </div>
     </div>
 </template>
 
 <script>
+import HuiDatepicker from "../components/hui-datepicker";
+
 export default {
     name: "About",
-    // props: {
-    //     // msg: {
-    //     //     value: "",
-    //     //     type: String,
-    //     // },
-    // },
+    components: {
+        HuiDatepicker,
+    },
     data() {
         return {
             msg: "About Page",

@@ -15,7 +15,16 @@ Vue.use(hui);
 
 Vue.config.productionTip = false;
 
+
 new Vue({
     render: h => h(App),
+    // routers,
     router: routers,
 }).$mount("#app");
+
+// new Vue({
+//     el: "#app",
+//     routers,
+//     components: { App },
+//     template: "<App/>",
+// });
