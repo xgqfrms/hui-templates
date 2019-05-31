@@ -26,6 +26,9 @@
             <router-link to="/index">Index</router-link>
         </span>
         <span class="link-box">
+            <router-link to="/index/3">Index/3</router-link>
+        </span>
+        <span class="link-box">
             <router-link to="/home">Home</router-link>
         </span>
         <span class="link-box">

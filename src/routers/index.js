@@ -8,11 +8,20 @@ import Home  from "../pages/home";
 import About from "../pages/about";
 import Index from "../pages/index";
 
+import ErrorPage from "../pages/404";
+
 
 const routes = [
     {
         path: "/index",
         component: Index,
+        props: true,
+    },
+    {
+        // path: "/index:id",
+        path: "/index/:id",
+        component: Index,
+        props: true,
     },
     {
         path: "/home",
@@ -22,10 +31,15 @@ const routes = [
         path: "/about",
         component: About,
     },
+    {
+        path: "*",
+        component: ErrorPage,
+    },
 ];
 
 
 const routers = new VueRouter({
+    mode: "history",
     routes,
 });
 
