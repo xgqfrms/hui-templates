@@ -15,12 +15,12 @@ const routes = [
     {
         path: "/index",
         component: Index,
-        props: true,
+        // props: true,
     },
     {
         // path: "/index:id",
         path: "/index/:id",
-        component: Index,
+        component: Index,// reuse the same `Index` component, only change different id
         props: true,
     },
     {

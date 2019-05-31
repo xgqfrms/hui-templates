@@ -20,9 +20,6 @@
 /* eslint-disable */
 import HelloWorld from "../components/HelloWorld";
 
-// alias / shortcut / shorthand
-const log = console.log;
-
 export default {
     name: "Index",
     props: [
@@ -56,41 +53,32 @@ export default {
     },
     watch: {
         "$route" (to, from) {
+            // 对路由变化作出响应...
             let to_path = to.path;
             let from_path = from.path;
-            log(`watch to =`, to_path);
-            log(`watch from =`, from_path);
+            console.log(`to =`, to_path);
+            console.log(`from =`, from_path);
             if (to_path !== "/index") {
                 this.isShowId = true;
             } else {
                 this.isShowId = false;
             }
+            // console.log(`to =`, to);
+            // console.log(`from =`, from);
         },
     },
-    beforeRouteUpdate (to, from, next) {
-        // eslint-disable-next-line
-        log(`Update to =`, to);
-        log(`Update from =`, from);
-        let id = to.params.id;
-        log(`to uid=`, id);
-        this.uid = to.params.id;
-        let path = to.path;
-        // this.$route.push(path);
-        next();
-    },
-    beforeRouteLeave (to, from, next) {
-        log(`Leave to =`, to);
-        log(`Leave from =`, from);
-        next();
-    },
-    beforeRouteEnter (to, from, next) {
-        log(`Leave to =`, to);
-        log(`Leave from =`, from);
-        next(vm => {
-            // 通过 `vm` 访问组件实例
-            log(`Enter vm`, vm);
-        });
-    },
+    // beforeRouteUpdate (to, from, next) {
+    //     console.log(`to =`, to);
+    //     console.log(`from =`, from);
+    //     // react to route changes...
+    //     // don't forget to call next()
+    //     // this.name = to.params.name;
+    //     let name = to.params.name;
+    //     // eslint-disable-next-line
+    //     console.log(`to name=`, name);
+    //     // this.$route.push();
+    //     next();
+    // },
 };
 </script>
 
