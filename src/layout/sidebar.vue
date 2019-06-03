@@ -1,66 +1,34 @@
 <template>
-    <!-- <div id="app">
-        <img
-            alt="Vue logo"
-            src="./assets/logo.png"
-            class="app-logo"
-        />
-        <hr />
-        <span class="link-box">
-            <router-link to="/index">Index</router-link>
-        </span>
-        <span class="link-box">
-            <router-link to="/index/1">Index/1</router-link>
-        </span>
-        <span class="link-box">
-            <router-link to="/index/3">Index/3</router-link>
-        </span>
-        <span class="link-box">
-            <router-link to="/home">Home</router-link>
-        </span>
-        <span class="link-box">
-            <router-link to="/about">About</router-link>
-        </span>
-        <router-view></router-view>
-    </div> -->
-        <div class="layout">
+    <div class="layout">
         <h-row name="flex">
             <h-col span="5" class="layout-menu-left">
                 <h-menu active-name="1-2" theme="dark" width="auto" :open-names="['1']">
                     <div class="layout-logo-left"></div>
                     <h-submenu name="1">
                         <template slot="title">
-                            <h-icon name="android-home"></h-icon>
+                            <h-icon name="ios-navigate"></h-icon>
                             导航一
                         </template>
                         <h-menu-item name="1-1">
                             <router-link to="/index">Index</router-link>
                         </h-menu-item>
-                        <h-menu-item name="1-2">
-                            <router-link to="/index/1">Index/1</router-link>
-                        </h-menu-item>
-                        <h-menu-item name="1-3">
-                            <router-link to="/index/3">Index/3</router-link>
-                        </h-menu-item>
+                        <h-menu-item name="1-2">选项 2</h-menu-item>
+                        <h-menu-item name="1-3">选项 3</h-menu-item>
                     </h-submenu>
                     <h-submenu name="2">
                         <template slot="title">
-                            <h-icon name="businesscard"></h-icon>
+                            <h-icon name="ios-keypad"></h-icon>
                             导航二
                         </template>
-                        <h-menu-item name="2-1">
-                            <router-link to="/home">Home</router-link>
-                        </h-menu-item>
+                        <h-menu-item name="2-1">选项 1</h-menu-item>
                         <h-menu-item name="2-2">选项 2</h-menu-item>
                     </h-submenu>
                     <h-submenu name="3">
                         <template slot="title">
-                            <h-icon name="ios-keypad"></h-icon>
+                            <h-icon name="ios-analytics"></h-icon>
                             导航三
                         </template>
-                        <h-menu-item name="3-1">
-                            <router-link to="/about">About</router-link>
-                        </h-menu-item>
+                        <h-menu-item name="3-1">选项 1</h-menu-item>
                         <h-menu-item name="3-2">选项 2</h-menu-item>
                     </h-submenu>
                 </h-menu>
@@ -89,58 +57,10 @@
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld";
-// import HuiDemo from "./components/hui-demo";
-// import HuiDatepicker from "./components/hui-datepicker";
+    export default {
 
-export default {
-    name: "app",
-    components: {
-        // HelloWorld,
-        // HuiDemo,
-        // HuiDatepicker,
     }
-};
 </script>
-
-<style>
-* {
-    box-sizing: border-box;
-    /* margin: 0; */
-    /* padding: 0; */
-}
-html{
-    /* font-size: 16px; */
-    /* default 16px === 1rem */
-    font-size: 62.5%;
-    /* 10px === 1rem */
-}
-#app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-    font-size: 1.6rem;
-}
-.app-logo {
-    width: 10rem;
-    height: 10rem;
-}
-.app-box {
-    margin: 0.5rem;
-    padding: 1rem;
-    border: 1px solid #666;
-    border-radius: 1rem;
-    box-shadow: .3rem 0.3rem #ccc;
-}
-.link-box {
-    display: inline-block;
-    margin: 5px;
-}
-</style>
-
 
 <style scoped>
     .layout{
