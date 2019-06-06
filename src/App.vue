@@ -27,7 +27,13 @@
         <h-row name="flex">
             <h-col span="5" class="layout-menu-left">
                 <h-menu active-name="1-2" theme="dark" width="auto" :open-names="['1']">
-                    <div class="layout-logo-left"></div>
+                    <div class="layout-logo-left">
+                        <img
+                            alt="logo"
+                            src="./assets/gildata.png"
+                            class="gildata-logo"
+                        />
+                    </div>
                     <h-submenu name="1">
                         <template slot="title">
                             <h-icon name="android-home"></h-icon>
@@ -51,7 +57,9 @@
                         <h-menu-item name="2-1">
                             <router-link to="/home">Home</router-link>
                         </h-menu-item>
-                        <h-menu-item name="2-2">选项 2</h-menu-item>
+                        <!-- <h-menu-item name="2-2">
+                            <router-link to="/home">Home</router-link>
+                        </h-menu-item> -->
                     </h-submenu>
                     <h-submenu name="3">
                         <template slot="title">
@@ -61,19 +69,24 @@
                         <h-menu-item name="3-1">
                             <router-link to="/about">About</router-link>
                         </h-menu-item>
-                        <h-menu-item name="3-2">选项 2</h-menu-item>
+                        <!-- <h-menu-item name="3-2">
+                            <router-link to="/about">About</router-link>
+                        </h-menu-item> -->
                     </h-submenu>
                 </h-menu>
             </h-col>
             <h-col span="19">
-                <div class="layout-header"></div>
-                <!-- <div class="layout-breadcrumb">
+                <div class="layout-header">
+                    <div class="layout-breadcrumb">
                     <h-breadcrumb>
                         <h-breadcrumb-item href="#">首页</h-breadcrumb-item>
                         <h-breadcrumb-item href="#">应用中心</h-breadcrumb-item>
-                        <h-breadcrumb-item>某应用</h-breadcrumb-item>
+                        <h-breadcrumb-item>
+                            {{path.substr(1)}}
+                        </h-breadcrumb-item>
                     </h-breadcrumb>
-                </div> -->
+                </div>
+                </div>
                 <div class="layout-content">
                     <div class="layout-content-main">
                         <!-- 内容区域 -->
@@ -92,6 +105,7 @@
 // import HelloWorld from "./components/HelloWorld";
 // import HuiDemo from "./components/hui-demo";
 // import HuiDatepicker from "./components/hui-datepicker";
+const log = console.log;
 
 export default {
     name: "app",
@@ -99,7 +113,34 @@ export default {
         // HelloWorld,
         // HuiDemo,
         // HuiDatepicker,
-    }
+    },
+    data() {
+        return {
+            path: this.$route.path,
+        };
+    },
+    methods: {
+        //
+    },
+    mounted() {
+        // console.log(`this.$route`, this.$route);
+        console.log(`this.$route.fullPath`, this.$route.fullPath);
+        console.log(`this.$route.path`, this.$route.path);
+        // console.log(`this.$route.params`, this.$route.params);
+    },
+    watch: {
+        "$route" (to, from) {
+            let to_path = to.path;
+            let from_path = from.path;
+            log(`watch to =`, to_path);
+            log(`watch from =`, from_path);
+            // if (to_path !== "/index") {
+            //     this.isShowId = true;
+            // } else {
+            //     this.isShowId = false;
+            // }
+        },
+    },
 };
 </script>
 
@@ -128,6 +169,7 @@ html{
     width: 10rem;
     height: 10rem;
 }
+
 .app-box {
     margin: 0.5rem;
     padding: 1rem;
@@ -152,7 +194,8 @@ html{
         padding: 10px 15px 0;
     }
     .layout-content{
-        min-height: 200px;
+        min-height: calc(100vh - 150px);
+        /* min-height: 200px; */
         margin: 15px;
         overflow: hidden;
         background: #fff;
@@ -168,6 +211,7 @@ html{
     }
     .layout-menu-left{
         background: #464c5b;
+        min-height: calc(100vh - 2px);
     }
     .layout-header{
         height: 60px;
@@ -175,10 +219,38 @@ html{
         box-shadow: 0 1px 1px rgba(0,0,0,.1);
     }
     .layout-logo-left{
-        width: 90%;
+        /* width: 90%; */
+        width: 70px;
+        /* width: 4rem; */
         height: 30px;
         background: #5b6270;
         border-radius: 3px;
         margin: 15px auto;
     }
+    .gildata-logo {
+        /* width: 5rem; */
+        height: 4rem;
+        border-radius: 3px;
+    }
+</style>
+
+
+<style>
+
+.h-menu-item >a {
+    width: 100%;
+    display: inline-block;
+    /* background: #f0f !important; */
+    height: 25px;
+    transform: translateX(-15px);
+    /* text-align: center; */
+    text-indent: 30%;
+    /* color: #fff !important; */
+}
+
+.h-menu-item-active > a,
+.h-menu-item-selected > a{
+    color: #fff !important;
+}
+
 </style>
